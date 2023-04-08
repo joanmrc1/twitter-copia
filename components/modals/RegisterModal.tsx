@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 
 import Input from "../Input";
 import Modal from "../Modal";
+import toast from "react-hot-toast";
 
 const RegisterModal = () => {
 
@@ -29,8 +30,12 @@ const RegisterModal = () => {
         name
       })
 
+      toast.success(`Sucesso!`,{ position: "top-center" })
+
       loginModal.onClose()
     } catch (e) {
+      toast.error(`Ocorreu um error ${e}`,{ position: "top-right" })
+
       console.log(e)
     } finally {
       setIsLoading(false)
