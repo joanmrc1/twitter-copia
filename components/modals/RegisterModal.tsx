@@ -32,7 +32,7 @@ const RegisterModal = () => {
 
       toast.success(`Sucesso!`,{ position: "top-center" })
 
-      loginModal.onClose()
+      registerModal.onClose()
     } catch (e) {
       toast.error(`Ocorreu um error ${e}`,{ position: "top-right" })
 
@@ -41,7 +41,7 @@ const RegisterModal = () => {
       setIsLoading(false)
     }
 
-  }, [loginModal, email, password, username, name])
+  }, [registerModal, email, password, username, name])
 
   const onToggle = useCallback(() => {
     if (isLoading) return
